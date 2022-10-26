@@ -1,0 +1,13 @@
+{% include 'include/base.html'%}
+{% load static %}
+{% load thumbnail %}
+{% block content %} 
+
+<form class="transparent">
+<h3>Добавить пост</h3>
+<div class="form-inner">
+    {{ form.as_p }}
+<input type="submit" value="Отправить"></a>
+</div>
+</form>
+{% endblock%}

@@ -1,0 +1,29 @@
+{% include 'include/base.html'%}
+{% load static %}
+{% load thumbnail %}
+{% block content %} 
+{% for ani in animal %}
+<div class="container">
+    <div class="post">
+        <div class="post-image">
+            <img src="{{ ani.potho.url }}">
+        </div>
+        <div class="post-content">
+            <div class="post-header">
+                <a href ="{{ ani.get_absolute_url }}">
+                <h1>{{ani.title }}</h1></a>
+                <div class="post-meta">
+                    <time datetime="2019-04-01">{{ani.created_at}}</time>
+                    <span class="author">{{ani.author}} </span>
+                    <a href ="{% url 'animals:category' ani.category.pk %}">
+                    <span class="category">{{ani.category}}</span></a>
+                </div>
+            </div>
+            <p>{{ani.contents|truncatewords:80|linebreaks }}
+            </p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock%}
+{% include 'include/footer.html' %}
