@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'animals',
     'findhouse',
     'users',
+    'core',
     'sorl.thumbnail',
 ]
 
@@ -40,11 +41,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'good_heartst_project.urls'
-
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -63,16 +64,24 @@ WSGI_APPLICATION = 'good_heartst_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        "ENGINE": os.getenv('ENGINE', default="django.db.backends.postgresql_psycopg2"),
-        "NAME": os.getenv('NAME', default=' '),
-        "USER": os.getenv('USER', default=''),
-        "PASSWORD": os.getenv('PASSWORD', default=' '),
-        "HOST": os.getenv('HOST', default='db'),
-        "PORT": os.getenv('PORT', default=5433),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         "ENGINE": os.getenv('ENGINE', default="django.db.backends.postgresql_psycopg2"),
+#         "NAME": os.getenv('NAME', default=' '),
+#         "USER": os.getenv('USER', default=''),
+#         "PASSWORD": os.getenv('PASSWORD', default=' '),
+#         "HOST": os.getenv('HOST', default='db'),
+#         "PORT": os.getenv('PORT', default=5433),
+#     }
+# }
 
 
 # Password validation

@@ -7,4 +7,3 @@ COPY . .
 RUN pip3 install -r requirements.txt --no-cache-dir
 
 CMD ["gunicorn", "good_heartst_project.wsgi:application", "--bind", "0:8000" ]
-#CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
