@@ -6,10 +6,8 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECRET_KEY = 'django-insecure-@j2f_qww_)4#0cf@#jp64ty6+&v3qhyp0w_++a4ihz1kc7&a18'
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-# DEBUG = True
 DEBUG = os.getenv('DEBUG')
 
 ALLOWED_HOSTS = ['web', 'localhost', 'dogdogmote.ddns.net', '127.0.0.1', ]
@@ -23,12 +21,23 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'sorl.thumbnail',
+    'social_django',
     'animals',
     'findhouse',
     'users',
     'core',
-    'sorl.thumbnail',
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.vk.VKontakteOpenAPI',
+)
+
+SOCIAL_AUTH_VK_OAUTH2_KEY = os.getenv('SOCIAL_AUTH_VK_OAUTH2_KEY')
+SOCIAL_AUTH_VK_OAUTH2_SECRET = os.getenv('SOCIAL_AUTH_VK_OAUTH2_SECRET')
+
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
