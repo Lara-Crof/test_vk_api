@@ -9,7 +9,7 @@ Django==3.2.15
 djangorestframework==3.12.4
 drf-spectacular==0.15.1
 gunicorn==20.1.0
-# idna==3.4
+idna==3.4
 importlib-metadata==5.0.0
 importlib-resources==5.10.0
 inflection==0.5.1
@@ -34,4 +34,5 @@ sqlparse==0.4.2
 typing_extensions==4.4.0
 uritemplate==4.1.1
 urllib3==1.26.12
+vk-api==11.9.9
 zipp==3.10.0
