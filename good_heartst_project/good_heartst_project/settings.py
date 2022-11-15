@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'findhouse',
     'users',
     'core',
+    'vk_api',
 ]
 
 AUTHENTICATION_BACKENDS = (
