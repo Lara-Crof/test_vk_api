@@ -12,7 +12,8 @@ vk_get_wall_posts = VkFunction(args=('values',), code='''
 
 def main():
     """Взятие постов из vk group"""
-    login, password = '+79372111363', 'заяцнупогоди1239'
+    login, password = '', '' # здесь пароль и телефон
+
     vk_session = vk_api.VkApi(login, password)
     try:
         vk_session.auth(token_only=True)
