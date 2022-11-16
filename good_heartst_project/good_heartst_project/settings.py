@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     'findhouse',
     'users',
     'core',
-    'vk_api',
+    'vk_posts',
 ]
 
 AUTHENTICATION_BACKENDS = (
@@ -142,3 +142,8 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# SCRIPT FOR VK_POSTS
+COUNT_OF_POSTS = 10
+PHOTO_SIZE = 4
+TIME_SLEEP = 3600
